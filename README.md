@@ -21,10 +21,6 @@ Este é um sistema desktop desenvolvido em **Java Swing** utilizando o padrão d
 - Padrão DAO/DTO
 
 ---
-
-
----
-
 ## ⚙️ Pré-requisitos
 
 - JDK 8 ou superior
