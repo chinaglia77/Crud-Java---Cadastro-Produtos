@@ -9,7 +9,7 @@ public class ConexaoDAO {
 
     private final static String USER = "root";
     private final static String PASSWORD = "";
-    private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/mercado_central";
+    private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/loja";
 
     public Connection conexaoDAO() {
         Connection conn = null;

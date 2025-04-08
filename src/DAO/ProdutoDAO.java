@@ -19,7 +19,7 @@ public class ProdutoDAO {
     ResultSet rs = null;
 
     public void cadastrarProduto(ProdutoDTO produto) {
-        String sql = "INSERT INTO produtos (id_produto, nome_produto, categoria, quantidade_estoque, preco) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO produto (idProduto, qtdEstoqueProduto, nomeProduto, categoriaProduto, preco) VALUES(?,?,?,?,?)";
 
         conn = new ConexaoDAO().conexaoDAO();
 
@@ -27,9 +27,9 @@ public class ProdutoDAO {
             ps = conn.prepareStatement(sql);
 
             ps.setInt(1, produto.getIdProduto());
-            ps.setString(2, produto.getNomeProduto());
-            ps.setString(3, produto.getCategoriaProduto());
-            ps.setInt(4, produto.getQtdEstoqueProduto());
+            ps.setInt(2, produto.getQtdEstoqueProduto());
+            ps.setString(3, produto.getNomeProduto());
+            ps.setString(4, produto.getCategoriaProduto());
             ps.setDouble(5, produto.getPreco());
 
             ps.execute();
@@ -47,17 +47,17 @@ public class ProdutoDAO {
         conn = new ConexaoDAO().conexaoDAO();
 
         try {
-            String sqlListarProdutos = "SELECT * FROM produtos";
+            String sqlListarProdutos = "SELECT * FROM produto";
 
             ps = conn.prepareStatement(sqlListarProdutos);
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 ProdutoDTO proDTO = new ProdutoDTO();
-                proDTO.setIdProduto(rs.getInt("id_produto"));
-                proDTO.setNomeProduto(rs.getString("nome_produto"));
-                proDTO.setCategoriaProduto(rs.getString("categoria"));
-                proDTO.setQtdEstoqueProduto(rs.getInt("quantidade_estoque"));
+                proDTO.setIdProduto(rs.getInt("idProduto"));
+                proDTO.setQtdEstoqueProduto(rs.getInt("qtdEstoqueProduto"));
+                proDTO.setNomeProduto(rs.getString("nomeProduto"));
+                proDTO.setCategoriaProduto(rs.getString("categoriaProduto"));
                 proDTO.setPreco(rs.getDouble("preco"));
               
 
@@ -75,7 +75,7 @@ public class ProdutoDAO {
         conn = new ConexaoDAO().conexaoDAO();
 
         try {
-            String sqlPesquisar = "SELECT * FROM produtos WHERE id_produto = ?";
+            String sqlPesquisar = "SELECT * FROM produto WHERE idProduto = ?";
 
             ps = conn.prepareStatement(sqlPesquisar);
             ps.setInt(1, produto.getIdProduto());
@@ -83,10 +83,10 @@ public class ProdutoDAO {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                produto.setIdProduto(rs.getInt("id_produto"));
-                produto.setNomeProduto(rs.getString("nome_produto"));
-                produto.setCategoriaProduto(rs.getString("categoria"));
-                produto.setQtdEstoqueProduto(rs.getInt("quantidade_estoque"));
+                produto.setIdProduto(rs.getInt("idProduto"));
+                produto.setQtdEstoqueProduto(rs.getInt("qtdEstoqueProduto"));
+                produto.setNomeProduto(rs.getString("nomeProduto"));
+                produto.setCategoriaProduto(rs.getString("categoriaProduto"));
                 produto.setPreco(rs.getDouble("preco"));
 
                 produtoPesquisado.add(produto);
@@ -103,7 +103,7 @@ public class ProdutoDAO {
         conn = new ConexaoDAO().conexaoDAO();
 
         try {
-            String sqlVerificarID = "SELECT * FROM produtos WHERE id_produto = ?";
+            String sqlVerificarID = "SELECT * FROM produto WHERE idProduto = ?";
 
             ps = conn.prepareStatement(sqlVerificarID);
             ps.setInt(1, proDTO.getIdProduto());
@@ -118,7 +118,7 @@ public class ProdutoDAO {
     }
 
     public void alterarProduto(ProdutoDTO produto) {
-        String sql = "UPDATE produtos SET id_produto = ?, nome_produto = ?, categoria = ?, quantidade_estoque = ?, preco = ? WHERE id_produto = ?";
+        String sql = "UPDATE produtos SET idProduto = ?, qtdEstoqueProduto = ?, nomeProduto = ?, categoriaProduto = ?, preco = ? WHERE idProduto = ?";
 
         conn = new ConexaoDAO().conexaoDAO();
 
@@ -142,7 +142,7 @@ public class ProdutoDAO {
     }
 
     public void excluirProdutos(ProdutoDTO proDTO) {
-        String sqlDeletarProduto = "DELETE FROM produtos WHERE id_produto = ?";
+        String sqlDeletarProduto = "DELETE FROM produto WHERE idProduto = ?";
 
         conn = new ConexaoDAO().conexaoDAO();
 
