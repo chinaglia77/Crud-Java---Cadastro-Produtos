@@ -1,19 +1,35 @@
-## Getting Started
+# 🧑‍💻 Tela de Login e Cadastro - Java Swing
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto é uma aplicação de interface gráfica feita com **Java Swing**, que simula um sistema de login e cadastro de usuários, com integração a banco de dados via `DAO` e `DTO`.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 🎯 Funcionalidades
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+✅ Tela de Login  
+✅ Tela de Cadastro  
+✅ Validação de campos vazios  
+✅ Validação de senha com mínimo de 8 caracteres  
+✅ Integração com banco de dados (via `UsuarioDAO`)  
+✅ Navegação entre as telas  
+✅ Estilo moderno com design escuro  
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 💡 Tecnologias
 
-## Dependency Management
+- Java SE
+- Swing (Javax Swing)
+- Programação orientada a objetos (POO)
+- JDBC (com DAO e DTO)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-# Crud-Java---Cadastro-Produtos
+---
+
+## 🖼️ Imagens do Projeto
+
+> (Adicione aqui prints das telas `TelaLogin` e `TelaCadastro`)
+
+---
+
+## 📁 Estrutura de Pacotes
+
