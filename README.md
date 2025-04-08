@@ -39,7 +39,7 @@ Este é um sistema desktop desenvolvido em **Java Swing** utilizando o padrão d
 Crie uma tabela chamada `produtos` com a seguinte estrutura:
 
 ```sql
-CREATE TABLE produtos (
+CREATE TABLE produto (
     id_produto INT PRIMARY KEY,
     nome_produto VARCHAR(100),
     categoria_produto VARCHAR(50),
